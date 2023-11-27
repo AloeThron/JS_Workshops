@@ -9,6 +9,7 @@ function App() {
     function clicked(){
         setT("คัดลอกคูปองแล้ว!!")
         navigator.clipboard.writeText(c)
+        setTimeout(() => {setT("คัดลอก")}, 3000)
     }
 
     return (
