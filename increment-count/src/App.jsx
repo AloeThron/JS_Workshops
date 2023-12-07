@@ -3,7 +3,6 @@ import "./App.css";
 import { FaFacebook } from "react-icons/fa";
 import { RiYoutubeFill } from "react-icons/ri";
 import { GrInstagram } from "react-icons/gr";
-import { useEffect } from "react";
 
 function App() {
   const [fcount, setfCount] = useState(0);
