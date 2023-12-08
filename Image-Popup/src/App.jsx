@@ -5,24 +5,27 @@ import Zoom from "./components/Zoom";
 
 function App() {
   const list = [1, 2, 3, 4, 5, 6, 7, 8];
-  const [vis, setVis] = useState("hidden")
+  const [vis, setVis] = useState("hidden");
+  const [img, setImg] = useState("");
 
   const link = list.map((n) => {
-    return `./foods-images/small/s_${n}.jpg`;
+    return `https://raw.githubusercontent.com/AloeThron/React_Workshops/main/Image-Popup/src/components/foods-images/small/s_${n}.jpg`;
   });
 
   return (
     <>
-    <div className="m-10 flex justify-center box-content">
-      <div className="flex flex-wrap md:gap-10 justify-center 2xl:justify-around">
-        {link.map((m) => (
-          <div key={m}>
-            <Card name={m} setVis={setVis} />
+      <div className="">
+        <div className="m-10 flex justify-center box-content">
+          <div className="flex flex-wrap md:gap-10 justify-center 2xl:justify-around">
+            {link.map((m) => (
+              <div key={m}>
+                <Card name={m} setVis={setVis} setImg={setImg} />
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
+        <Zoom vis={vis} setVis={setVis} img={img} />
       </div>
-    </div>
-    <Zoom vis={vis} setVis={setVis} />
     </>
   );
 }
