@@ -16,7 +16,7 @@ function App() {
       <div className="h-screen flex justify-center items-center">
         {sounds.map((s) => (
           <div key={s.id}>
-            <Player src={s.src} />
+            <Player src={s.src} sound={s.sound} />
           </div>
         ))}
       </div>
