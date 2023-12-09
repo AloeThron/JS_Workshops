@@ -4,19 +4,22 @@ import Player from "./components.jsx/Player";
 
 function App() {
   const sounds = [
-    { id: 1, sound: "Effect1", "src": "./sounds/Effect1.wav" },
-    { id: 2, sound: "Effect2", "src": "./sounds/Effect2.wav" },
-    { id: 3, sound: "Effect3", "src": "./sounds/Effect3.wav" },
-    { id: 4, sound: "Effect4", "src": "./sounds/Effect4.wav" },
-    { id: 5, sound: "Effect5", "src": "./sounds/Effect5.wav" }
+    { id: 1, sound: "Effect1", "src": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" },
+    { id: 2, sound: "Effect2", "src": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" },
+    { id: 3, sound: "Effect3", "src": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" },
+    { id: 4, sound: "Effect4", "src": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" },
+    { id: 5, sound: "Effect5", "src": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" }
   ];
+
+  const [idOnPlay, setIdOnPlay] = useState("")
+  
 
   return (
     <>
       <div className="h-screen flex justify-center items-center">
         {sounds.map((s) => (
           <div key={s.id}>
-            <Player src={s.src} sound={s.sound} />
+            <Player id={s.id} src={s.src} sound={s.sound} idOnPlay={idOnPlay} setIdOnPlay={setIdOnPlay} />
           </div>
         ))}
       </div>

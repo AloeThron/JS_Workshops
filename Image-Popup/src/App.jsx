@@ -14,7 +14,7 @@ function App() {
 
   return (
     <>
-      <div className="">
+      <div>
         <div className="m-10 flex justify-center box-content">
           <div className="flex flex-wrap md:gap-10 justify-center 2xl:justify-around">
             {link.map((m) => (
