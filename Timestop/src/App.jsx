@@ -11,17 +11,15 @@ function App() {
 
   useEffect(() => {
     let runTime1, runTime2, runTime3, runTime4;
-    let count = 0;
-
     if (start) {
       runTime1 = setInterval(() => {
-        setMilliseconds((i) => (i == 100 ? 0 : i + 1));
+        setMilliseconds((i) => (i == 99 ? 0 : i + 1));
       }, 10);
       runTime2 = setInterval(() => {
-        setSecond((i) => (i == 60 ? 0 : i + 1));
+        setSecond((i) => (i == 59 ? 0 : i + 1));
       }, 1000);
       runTime3 = setInterval(() => {
-        setMinutes((i) => (i == 60 ? 0 : i + 1));
+        setMinutes((i) => (i == 59 ? 0 : i + 1));
       }, 60000);
       runTime4 = setInterval(() => {
         setHours((i) => (i == 99 ? setStop(false) : i + 1));
@@ -32,7 +30,6 @@ function App() {
       clearInterval(runTime3);
       clearInterval(runTime4);
     }
-
     return () => {
       clearInterval(runTime1);
       clearInterval(runTime2);
