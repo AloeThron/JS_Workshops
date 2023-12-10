@@ -30,7 +30,7 @@ function App() {
       <div className="flex flex-wrap sm:gap-10 justify-center 2xl:justify-around mb-16">
         {currentImages.map((image) => (
           <div key={image.id}>
-            <Card img={image.imageUrl} />
+            <Card  id={image.id} img={image.imageUrl} />
           </div>
         ))}
       </div>

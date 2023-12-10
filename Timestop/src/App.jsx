@@ -1,56 +1,100 @@
 import { useState, useEffect } from "react";
-import Card from "./components/Card";
 import "./App.css";
 
 function App() {
-  const [images, setImages] = useState([]); // เก็บข้อมูลภาพทั้งหมด
-  const [currentPage, setCurrentPage] = useState(1); // หน้าปัจจุบันของ Pagination
-  const imagesPerPage = 8; // จำนวนของภาพในแต่ละหน้า
+  const [milliseconds, setMilliseconds] = useState(0);
+  const [second, setSecond] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const [hours, setHours] = useState(0);
+  const [start, setStart] = useState(false);
+  const [stop, setStop] = useState(true);
 
   useEffect(() => {
-    let nums = [];
-    for (let i = 0; i < Math.ceil(Math.random() * (100 - 30 + 1) + 30); i++) {
-      nums.push({ id: i, imageUrl: `https://source.unsplash.com/random/${i}` });
+    let runTime1, runTime2, runTime3, runTime4;
+    let count = 0;
+
+    if (start) {
+      runTime1 = setInterval(() => {
+        setMilliseconds((i) => (i == 100 ? 0 : i + 1));
+      }, 10);
+      runTime2 = setInterval(() => {
+        setSecond((i) => (i == 60 ? 0 : i + 1));
+      }, 1000);
+      runTime3 = setInterval(() => {
+        setMinutes((i) => (i == 60 ? 0 : i + 1));
+      }, 60000);
+      runTime4 = setInterval(() => {
+        setHours((i) => (i == 99 ? setStop(false) : i + 1));
+      }, 3600000);
+    } else {
+      clearInterval(runTime1);
+      clearInterval(runTime2);
+      clearInterval(runTime3);
+      clearInterval(runTime4);
     }
-    setImages(nums);
-  }, []);
 
-  // หา Index ของข้อมูลภาพที่จะแสดงในหน้า Pagination ปัจจุบัน
-  const indexOfLastImage = currentPage * imagesPerPage;
-  const indexOfFirstImage = indexOfLastImage - imagesPerPage;
-  const currentImages = images.slice(indexOfFirstImage, indexOfLastImage);
+    return () => {
+      clearInterval(runTime1);
+      clearInterval(runTime2);
+      clearInterval(runTime3);
+      clearInterval(runTime4);
+    };
+  }, [start]);
 
-  // Function เปลี่ยนหน้า Pagination
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  function startTime() {
+    setStart(true);
+    setStop(false)
+  }
+
+  function stopTime() {
+    setStart((prevIsActive) => !prevIsActive);
+  }
+
+  function resetTime() {
+    setStart(false);
+    setHours(0);
+    setMinutes(0);
+    setSecond(0);
+    setMilliseconds(0);
+  }
 
   return (
-    <div>
-      <div className="mt-10 flex justify-center">
-        <h1 className="text-4xl font-bold mb-16">Random Images Pagination</h1>
-      </div>
-
-      <div className="flex flex-wrap sm:gap-10 justify-center 2xl:justify-around mb-16">
-        {currentImages.map((image) => (
-          <div key={image.id}>
-            <Card img={image.imageUrl} />
+    <div className="h-screen w-screen flex flex-col justify-center items-center">
+      <div className="h-[400px] bg-gradient-to-br from-slate-50 to-gray-50 shadow-md border border-gray-200 rounded-lg w-[300px] max-w-xs lg:max-w-sm cont">
+        <div>
+          <h1 className="mt-12 text-center text-5xl font-bold mb-16">
+            Stop Watch
+          </h1>
+        </div>
+        <div className="my-10 h-[100px] flex justify-center items-center">
+          <div className=" text-5xl font-bold">
+            {hours < 10 ? "0" + hours : hours}:
+            {minutes < 10 ? "0" + minutes : minutes}:
+            {second < 10 ? "0" + second : second}:
+            {milliseconds < 10 ? "0" + milliseconds : milliseconds}
           </div>
-        ))}
-      </div>
-
-      <div>
-        <div className="text-center">
-          {Array.from(
-            { length: Math.ceil(images.length / imagesPerPage) },
-            (_, index) => (
-              <button
-                className="mx-1 p-2 px-4 bg-gradient-to-br from-slate-50 to-gray-50 border border-gray-200 rounded-lg hover:shadow-sm"
-                key={index + 1}
-                onClick={() => paginate(index + 1)}
-              >
-                {index + 1}
-              </button>
-            )
-          )}
+        </div>
+        <div className="my-5 p-2 text-center">
+          <button
+            className="mx-2 p-2 px-5 text-white font-bold text-center rounded-md bg-cyan-400 hover:shadow-md hover:shadow-slate-300 disabled:bg-slate-400"
+            onClick={startTime}
+            disabled={start}
+          >
+            Start
+          </button>
+          <button
+            className="mx-2 p-2 px-5 text-white font-bold text-center rounded-md bg-cyan-400 hover:shadow-md hover:shadow-slate-300"
+            onClick={stopTime}
+            disabled={stop}
+          >
+            Stop
+          </button>
+          <button
+            className="mx-2 p-2 px-5 text-white font-bold text-center rounded-md bg-cyan-400 hover:shadow-md hover:shadow-slate-300"
+            onClick={resetTime}
+          >
+            Reset
+          </button>
         </div>
       </div>
     </div>
