@@ -15,7 +15,7 @@ function App() {
     e.preventDefault();
     if (!name) {
       setAlert({show: true, msg: "Content is none.", type: "error"})
-    } 
+    }
     else if (checkEdit && name) {
       const result = list.map((item) => {
         if (item.id === editId) {
