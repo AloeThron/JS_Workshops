@@ -75,7 +75,7 @@ Section Javascript
 06. Navigation
 07. Image Slide
 08. Todo List
-09. calculate
+09. Calculate
 10. Search and Filter
 11. Dynamic Dropdown
 12. Infinite Scroll Photo
