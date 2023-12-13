@@ -10,6 +10,7 @@ export default function Zoom(props) {
           <img
             className="z-30 rounded-lg absolute inset-x-0 inset-y-0 m-auto"
             src={props.img}
+            onClick={() => {props.setVis("hidden")}}
           />
         </div>
       </div>
