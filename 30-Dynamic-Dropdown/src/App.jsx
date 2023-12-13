@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Card from "./components/card";
 import Zoom from "./components/Zoom";
+import data from "./components/Food"
 
 function App() {
   const list = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -17,9 +18,9 @@ function App() {
       <div>
         <div className="m-10 flex justify-center box-content">
           <div className="flex flex-wrap md:gap-10 justify-center 2xl:justify-around">
-            {link.map((m) => (
-              <div key={m}>
-                <Card name={m} setVis={setVis} setImg={setImg} />
+            {data.map((f, index) => (
+              <div key={index}>
+                <Card type={f.type} url={f.url} setVis={setVis} setImg={setImg} />
               </div>
             ))}
           </div>

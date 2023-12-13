@@ -1,6 +1,6 @@
-# JS_Workshops
+# React_Workshops
 
-Section Javascript
+React + Vite + Tailwind
 01. Click-to-Copy
 02. Clock Light/Dark Mode
 03. Input Character Count
@@ -21,39 +21,49 @@ Section Javascript
 18. Random Image (Unsplash API)
 19. Timestop
 20. BMI Calculator
+21. Form Validation
+22. Quiz App
+23. Light-Dark
+24. Accordion
+25. Currency Converter
+26. Navigation
+27. Image Slide
+28. Todo List
+29. Calculate
+30. Dynamic Dropdown
+34. Pagination
+
+31. Infinite Scroll (Unsplash API)
+
+32. Weather data
+
+33. Shopping Cart
 
 
-Section Javascript
-01. Exchange Rate API
+
 02. Money Tracker
-03. Light Dark Mode
 04. Search Lyric
 05. Fast typing game
-06. Text Reveal
-07. Calculator
 08. Music API
 09. Appointment schedule
 10. New Year Coundown
-11. Form Validation
-12. Infinite Scroll (Unsplash API)
 13. Kanban board
 14. Picture in Picture
 15. Reserve movie seats
 16. Movie Data (TMDB API)
 17. Memory Card Game
-18. Menu Slider
 19. Speech to Text
+
 20. Weather information
+
 21. Expand Card Effect
 22. Product Scroll Animetion
 23. SplitPageContent
-24. Quiz Exam
 25. Text Keyboard Effect
-26. Satisfaction assessment Emoji
-27. Image Carousel
-28. Vertical content
 29. Content Loading
 30. Review Content
+
+
 31. Data search
 32. Code editor
 33. Character Limit
@@ -64,21 +74,3 @@ Section Javascript
 38. Satisfaction assessment Star
 39. Upload Profile
 40. Love Button
-
-
-Section Javascript
-01. Form Validation
-02. Quiz App
-03. Light-Dark
-04. Accordion
-05. Currency Converter
-06. Navigation
-07. Image Slide
-08. Todo List
-09. Calculate
-10. Search and Filter
-11. Dynamic Dropdown
-12. Infinite Scroll Photo
-13. Pagination
-14. Weather data
-15. Shopping Cart
