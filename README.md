@@ -36,7 +36,6 @@ React + Vite + Tailwind
 31. Infinite Scroll (Unsplash API)
 
 32. Weather data
-
 33. Shopping Cart
 
 
