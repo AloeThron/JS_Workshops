@@ -23,7 +23,7 @@ export default function Player(props) {
 
   return (
     <div>
-      <div className="h-screen flex flex-col justify-center items-center gap-4">
+      <div className="flex flex-col justify-center items-center gap-4">
         <video className="m-2 p-1 rounded-md" src={props.src} ref={audioRef} loop playsInline muted />
         <button
           className="mr-4 rounded-lg bg-purple-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-purple-500/20 transition-all hover:shadow-lg hover:shadow-purple-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"

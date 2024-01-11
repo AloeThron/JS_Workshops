@@ -1,7 +1,7 @@
 const QuestionsData = [
     {
         question:"ข้อใดไม่ใช่ tag html",
-        A:"<kong>",
+        A:"<tong>",
         B:"<a>",
         C:"<p>",
         D:"<h1>",

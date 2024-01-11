@@ -8,7 +8,7 @@ export default function Zoom(props) {
         <div className="h-screen w-screen z-20 bg-gray-50 opacity-70 sticky inset-x-0 inset-y-0" onClick={() => {props.setVis("hidden")}}></div>
         <div>
           <img
-            className="z-30 rounded-lg absolute inset-x-0 inset-y-0 m-auto"
+            className="z-30 rounded-lg absolute inset-x-0 inset-y-0 m-auto max-h-[80%] max-w-[80%]"
             src={props.img}
             onClick={() => {props.setVis("hidden")}}
           />
